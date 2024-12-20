@@ -11,7 +11,7 @@
 
 // TODO:
 // [] Read input
-// [] Sort a list (bitonic sort?)
+// [] Sort a list (bitonic sort? Parallel mergesort/quicksort for 64 bit, parallel radix sort ofr 32 bit)
 // [] Sort both lists
 // [] Compute sum of pairwise distances
 // [] Print output
@@ -34,25 +34,7 @@ __global__ int SerialParallelSum(const int* A, int numElements) {
     // Finally, return S
 
     // --- Notes ---
-    // Can I reshape the vector A from (N,) to (k, p)
-
-    return 0
-}
-
-int main(void) {
-    int numElements = 50000;
-    size_t size = numElements * sizeof(int);
-
-    // Allocate memory for host vectors
-    int *h_A = (int *)malloc( size );
-    int *h_B = (int *)malloc( size );
-    int *h_C = (int *)malloc( size );
-
-    // Initialize host vectors
-    for ( int i = 0; i < numElements; i++  ) {
-        h_A[i] = 2*i + 1;
-        h_B[i] = i;
-    }
+    // Can I reshape the vector A from (N,) to (k, p
 
     // Declare device vectors
     int *d_A, *d_B, *d_C;
